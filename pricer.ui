@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>901</width>
+    <height>807</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Barrier Option Pricer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Input Values</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DownIn_PushButton">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>150</y>
+      <width>92</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DownIn</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="inputs_tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>70</y>
+      <width>256</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1</width>
+      <height>1</height>
+     </size>
+    </property>
+    <row>
+     <property name="text">
+      <string>Spot price</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Strike price</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Barrier price</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Volatility (%)</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Maturity (days)</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Risk-free rate (%)</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Values</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>100</string>
+     </property>
+    </item>
+    <item row="1" column="0">
+     <property name="text">
+      <string>110</string>
+     </property>
+    </item>
+    <item row="2" column="0">
+     <property name="text">
+      <string>80</string>
+     </property>
+    </item>
+    <item row="3" column="0">
+     <property name="text">
+      <string>10</string>
+     </property>
+    </item>
+    <item row="4" column="0">
+     <property name="text">
+      <string>100</string>
+     </property>
+    </item>
+    <item row="5" column="0">
+     <property name="text">
+      <string>1.5</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>450</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pricing Engine</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="pricingEngine_listWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>480</y>
+      <width>171</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="currentRow">
+     <number>0</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Analytical</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>AnalyticalBinary</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>FD</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MC</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Binomial</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="UpOut_PushButton">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>100</y>
+      <width>92</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>UpOut</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DownOut_PushButton">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>150</y>
+      <width>92</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DownOut</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="UpIn_PushButton">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>100</y>
+      <width>92</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>UpIn</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>290</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Option Type</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="results_tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>440</y>
+      <width>256</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1</width>
+      <height>1</height>
+     </size>
+    </property>
+    <row>
+     <property name="text">
+      <string>Option price</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Delta</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Vega</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Theta</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Rho</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Gamma</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Values</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item row="1" column="0">
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item row="2" column="0">
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item row="3" column="0">
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item row="4" column="0">
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item row="5" column="0">
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+   </widget>
+   <widget class="QListWidget" name="optionType_listWidget">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>320</y>
+      <width>81</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="currentRow">
+     <number>0</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Call</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Put</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>70</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Examples</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="barrierType_listWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>320</y>
+      <width>81</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="currentRow">
+     <number>0</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>UpOut</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DownOut</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>UpIn</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DownIn</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>410</y>
+      <width>63</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Results</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>290</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Barrier Type</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="CalculateButton">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>650</y>
+      <width>92</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calculate</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>290</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Option Excercise</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="optionExercise_listWidget">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>320</y>
+      <width>81</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="currentRow">
+     <number>0</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>European</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>American</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
